@@ -8,6 +8,13 @@
     {
       "name": "bricelam",
       "source": "./"
+    },
+    {
+      "name": "microsoft-docs",
+      "source": {
+        "source": "github",
+        "repo": "MicrosoftDocs/mcp"
+      }
     }
   ]
 }
