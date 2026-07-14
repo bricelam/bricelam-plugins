@@ -1,0 +1,13 @@
+{
+  "name": "bricelam-plugins",
+  "owner": {
+    "name": "Brice Lambson",
+    "email": "brice@bricelam.net"
+  },
+  "plugins": [
+    {
+      "name": "bricelam",
+      "source": "./"
+    }
+  ]
+}

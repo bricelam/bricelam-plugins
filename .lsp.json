@@ -1,0 +1,17 @@
+{
+  "csharp-ls": {
+    "command": "dnx",
+    "args": [
+      "roslyn-language-server",
+      "--yes",
+      "--prerelease",
+      "--",
+      "--stdio",
+      "--autoLoadProjects"
+    ],
+    "extensionToLanguage": {
+      ".cs": "csharp"
+    },
+    "startupTimeout": 120000
+  }
+}
