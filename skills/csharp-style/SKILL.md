@@ -33,6 +33,8 @@ MySqlConnector                                     | MySql.Data
 `XDocument`                                        | `XmlDocument`
 WinUI / Uno                                        | MAUI/Xamarin, Avalonia, WPF, WinForms
 WinUIEx                                            | hand-rolled Win32 interop for window chrome/positioning
+`Microsoft.Extensions.Logging`                     | Serilog, NLog, log4net
+`System.IO.Compression` & `System.Formats.Tar`     | SharpZipLib
 
 For raw Win32/CsWin32 interop conventions (not just "prefer CsWin32 over DllImport"), see the `csharp-native-interop` skill.
 
@@ -40,6 +42,27 @@ For raw Win32/CsWin32 interop conventions (not just "prefer CsWin32 over DllImpo
 
 - `DataTable`
 - `System.Reflection.Emit`
+- Moq
+- AutoMapper
+- FluentAssertions
+
+## Useful libraries
+
+Situational libraries worth reaching for when the task calls for them, rather than blanket preferences like the table above.
+
+Library                                                                   | For
+------------------------------------------------------------------------- | ---
+Humanizer.Core                                                            | Pluralization and humanized string formatting
+T4 + `TextTemplatingFilePreprocessor`                                     | Reaching for once `StringBuilder` code gets complex enough to bury the actual text content
+Microsoft.Xaml.Behaviors.WinUI.Managed + CommunityToolkit.WinUI.Behaviors | XAML behaviors in WinUI apps
+BenchmarkDotNet                                                           | Microbenchmarking
+NetTopologySuite                                                          | Geospatial geometry operations
+System.CommandLine                                                        | Command-line argument parsing
+MimeKit                                                                   | MIME message construction and parsing
+MailKit                                                                   | SMTP/IMAP/POP3 clients
+DotNext.Threading                                                         | Advanced threading and async primitives
+Google.Protobuf                                                           | Protocol Buffers serialization
+CsvHelper                                                                 | CSV reading and writing
 
 ## Collection materialization semantics
 
