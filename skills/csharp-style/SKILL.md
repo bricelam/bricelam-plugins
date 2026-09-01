@@ -1,6 +1,6 @@
 ---
 name: csharp-style
-description: C#/.NET conventions---which library or API to reach for when several compete for the same job, and the exact semantics of ToList, new List, and collection-expression spread. Use this whenever writing, reviewing, or suggesting C#/.NET code, whenever choosing a NuGet package or BCL API for a task (HTTP resilience, YAML, MVVM, testing, ORM, versioning, DB drivers, etc.), and whenever materializing an enumerable sequence into a list---even if the user doesn't explicitly ask for "style" or "conventions."
+description: C#/.NET conventions---which library or API to reach for when several compete for the same job, the exact semantics of ToList, new List, and collection-expression spread, and how to write a LINQ query expression that ends in a method call. Use this whenever writing, reviewing, or suggesting C#/.NET code, whenever choosing a NuGet package or BCL API for a task (HTTP resilience, YAML, MVVM, testing, ORM, versioning, DB drivers, etc.), whenever materializing an enumerable sequence into a list, and whenever a LINQ query expression (`from`...`select`) needs a trailing call like `Count()` or `ToList()`---even if the user doesn't explicitly ask for "style" or "conventions."
 ---
 
 # C# style
@@ -63,6 +63,27 @@ MailKit                                                                   | SMTP
 DotNext.Threading                                                         | Advanced threading and async primitives
 Google.Protobuf                                                           | Protocol Buffers serialization
 CsvHelper                                                                 | CSV reading and writing
+
+## Query syntax with a trailing method call
+
+A query expression (`from`...`select`) has no method syntax of its own for calls like `Count` or `ToList`---don't bolt one on by parenthesizing the whole expression. Instead, pass the query expression as an argument to the equivalent `Enumerable`/`Queryable` static method.
+
+Prefer:
+
+```cs
+var count = Queryable.Count(
+    from b in db.Blogs
+    where b.Name.Contains(".NET")
+    select b);
+```
+
+Over:
+
+```cs
+var count = (from b in db.Blogs
+             where b.Name.Contains(".NET")
+             select b).Count();
+```
 
 ## Collection materialization semantics
 
