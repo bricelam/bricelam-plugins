@@ -38,6 +38,8 @@ WinUIEx                                            | hand-rolled Win32 interop f
 
 For raw Win32/CsWin32 interop conventions (not just "prefer CsWin32 over DllImport"), see the `csharp-native-interop` skill.
 
+For CsvHelper usage conventions (not just "prefer CsvHelper for CSV"), see the `csharp-csvhelper` skill.
+
 ### Avoid
 
 - `DataTable`
