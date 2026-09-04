@@ -1,6 +1,6 @@
 ---
 name: csharp-style
-description: C#/.NET conventions---which library or API to reach for when several compete for the same job, the exact semantics of ToList, new List, and collection-expression spread, and how to write a LINQ query expression that ends in a method call. Use this whenever writing, reviewing, or suggesting C#/.NET code, whenever choosing a NuGet package or BCL API for a task (HTTP resilience, YAML, MVVM, testing, ORM, versioning, DB drivers, etc.), whenever materializing an enumerable sequence into a list, and whenever a LINQ query expression (`from`...`select`) needs a trailing call like `Count()` or `ToList()`---even if the user doesn't explicitly ask for "style" or "conventions."
+description: C#/.NET conventions---which library or API to reach for when several compete for the same job, the exact semantics of ToList, new List, and collection-expression spread, how to write a LINQ query expression that ends in a method call, and which collection interface to use for method parameters and return types. Use this whenever writing, reviewing, or suggesting C#/.NET code, whenever choosing a NuGet package or BCL API for a task (HTTP resilience, YAML, MVVM, testing, ORM, versioning, DB drivers, etc.), whenever materializing an enumerable sequence into a list, whenever a LINQ query expression (`from`...`select`) needs a trailing call like `Count()` or `ToList()`, and whenever declaring a method's parameter or return type that is a collection (arrays, `List<T>`, `IEnumerable<T>`, dictionaries, etc.)---even if the user doesn't explicitly ask for "style" or "conventions."
 ---
 
 # C# style
@@ -94,3 +94,13 @@ Expression                             | Meaning
 `x.ToList()`                           | Buffer/materialize a lazy `IEnumerable`; also the normal way to convert another collection type (array, `HashSet<T>`, etc.) into a `List<T>`.
 `new List<T>(x)`                       | Explicitly copy/snapshot an existing collection into a new, independent `List<T>`---signals "I need my own copy of this" rather than "I need to run the query."
 `[..x]` (collection-expression spread) | Syntax abuse. Never use this to materialize or copy a list---use one of the two above instead.
+
+## Collection interface guidance
+
+Favor the least-committal interface that still expresses what the implementation actually needs---this lets the caller choose between streaming and buffering instead of the signature forcing a choice.
+
+Return types: favor `IEnumerable<T>`/`IAsyncEnumerable<T>` over `T[]`, `List<T>`, `Task<List<T>>`, etc., unless the implementation requires results to already be buffered.
+
+Parameter types: favor `IEnumerable<T>`/`IAsyncEnumerable<T>` unless the implementation requires multiple enumerations. Use `IReadOnlyCollection<T>` when only a count is needed, or `IReadOnlyList<T>` when random access is required.
+
+For dictionary parameters, favor `IEnumerable<KeyValuePair<TKey, TValue>>` over `IReadOnlyDictionary<TKey, TValue>`, since `IDictionary<TKey, TValue>` doesn't implement `IReadOnlyDictionary<TKey, TValue>`.
