@@ -56,7 +56,7 @@ Library                                                                   | For
 ------------------------------------------------------------------------- | ---
 Humanizer.Core                                                            | Pluralization and humanized string formatting
 T4 + `TextTemplatingFilePreprocessor`                                     | Reaching for once `StringBuilder` code gets complex enough to bury the actual text content
-Microsoft.Xaml.Behaviors.WinUI.Managed + CommunityToolkit.WinUI.Behaviors | XAML behaviors in WinUI apps
+Microsoft.Xaml.Behaviors.WinUI.Managed                                   | XAML behaviors in WinUI apps
 BenchmarkDotNet                                                           | Microbenchmarking
 NetTopologySuite                                                          | Geospatial geometry operations
 System.CommandLine                                                        | Command-line argument parsing
@@ -65,6 +65,7 @@ MailKit                                                                   | SMTP
 DotNext.Threading                                                         | Advanced threading and async primitives
 Google.Protobuf                                                           | Protocol Buffers serialization
 CsvHelper                                                                 | CSV reading and writing
+CommunityToolkit.WinUI.*                                                  | WinUI-specific controls, animations, behaviors, converters, and device helpers (camera, network, etc.)---check for a package before hand-rolling
 
 ## Query syntax with a trailing method call
 
