@@ -10,7 +10,7 @@ When posting to GitHub (issue comments, PR comments, PR reviews, issue bodies), 
 ## Format
 
 ```md
-*From **Claude Code***
+:robot: Generated with [Claude Code](https://claude.com/claude-code)
 
 Body text here.
 ```
