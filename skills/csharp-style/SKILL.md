@@ -35,6 +35,7 @@ WinUI / Uno                                        | MAUI/Xamarin, Avalonia, WPF
 WinUIEx                                            | hand-rolled Win32 interop for window chrome/positioning
 `Microsoft.Extensions.Logging`                     | Serilog, NLog, log4net
 `System.IO.Compression` & `System.Formats.Tar`     | SharpZipLib
+`StringLengthAttribute`                            | `MaxLengthAttribute`
 
 For raw Win32/CsWin32 interop conventions (not just "prefer CsWin32 over DllImport"), see the `csharp-native-interop` skill.
 
