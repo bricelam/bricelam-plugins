@@ -43,13 +43,13 @@ Constructor `<summary>`           | Initializes a new instance of the {class nam
 Finalizer `<summary>`             | Finalizes an instance of the {class name} class.
 Property `<summary>`              | Gets [or sets] [a value indicating whether]...
 Boolean `<returns>` and `<value>` | true if {condition}; otherwise, false.
-`<exception>`                     | {condition}
+`<exception>`                     | {condition that completes "Thrown if..."}.
 
 "A value indicating whether" is only for boolean properties.
 
 A property's `<value>` can be the same as its `<summary>` without "Gets or sets"---except for boolean properties, which use the boolean pattern above.
 
-Don't start `<exception>` with "Thrown if"; state only the condition.
+Write `<exception>` so it completes the sentence "Thrown if..."---but omit "Thrown if" itself. For example, "<paramref name="name"/> is <see langword="null"/>." rather than "The name cannot be null." or "Thrown if the name is null."
 
 Example:
 
