@@ -19,8 +19,10 @@ Prefer                    | Over
 `<paramref name=""/>`     | `<c>`
 `<typeparamref name=""/>` | `<c>`
 `<see langword=""/>`      | `<c>`
-`<strong>`                | `<b>`
-`<em>`                    | `<i>`
+`<b>`                     | `<strong>`
+`<i>`                     | `<em>`
+
+The `<b>` and `<i>` preferences are deliberate, even though they're the opposite of the usual semantic-HTML advice: `<em>` isn't a recommended XML doc tag, and some tools don't process `<strong>`.
 
 Use `<c>` sparingly; it's visually heavy. For example, use it only on the first occurrence, only when the content is highly relevant, or only when it would otherwise be ambiguous whether the text refers to code.
 
