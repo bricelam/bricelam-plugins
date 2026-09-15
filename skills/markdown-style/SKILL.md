@@ -1,6 +1,6 @@
 ---
 name: markdown-style
-description: Conventions for writing Markdown---plain/simple table formatting (no outer pipes, columns aligned with padding) and smartypants shorthand for dashes, quotes, and ellipses. Use whenever writing or editing Markdown prose, tables, or documentation (SKILL.md files, READMEs, issues, PR descriptions, commit-adjacent docs)---even if the user doesn't explicitly ask for "formatting" or "style."
+description: Conventions for writing Markdown---plain/simple table formatting (no outer pipes, columns aligned with padding) and smartypants shorthand for dashes, quotes, and ellipses, and sparing use of backtick code spans. Use whenever writing or editing Markdown prose, tables, or documentation (SKILL.md files, READMEs, issues, PR descriptions, commit-adjacent docs)---even if the user doesn't explicitly ask for "formatting" or "style."
 ---
 
 # Markdown style
@@ -30,3 +30,7 @@ Type       | Renders as
 `'` / `"`  | curly quotes (' ' " ") where used as an actual quote/apostrophe
 
 This applies in prose and inside table cells alike. It does not apply inside code spans/fences or the middle of identifiers---only in running text.
+
+## Code spans
+
+Use backtick code spans sparingly; they're visually heavy. For example, use them only on the first occurrence, only when the content is highly relevant, or only when it would otherwise be ambiguous whether the text refers to code.
