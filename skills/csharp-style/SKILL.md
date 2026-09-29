@@ -1,6 +1,6 @@
 ---
 name: csharp-style
-description: C#/.NET conventions---which library or API to reach for when several compete for the same job, the exact semantics of ToList, new List, and collection-expression spread, how to write a LINQ query expression that ends in a method call, and which collection interface to use for method parameters and return types. Use this whenever writing, reviewing, or suggesting C#/.NET code, whenever choosing a NuGet package or BCL API for a task (HTTP resilience, YAML, MVVM, testing, ORM, versioning, DB drivers, etc.), whenever materializing an enumerable sequence into a list, whenever a LINQ query expression (`from`...`select`) needs a trailing call like `Count()` or `ToList()`, and whenever declaring a method's parameter or return type that is a collection (arrays, `List<T>`, `IEnumerable<T>`, dictionaries, etc.)---even if the user doesn't explicitly ask for "style" or "conventions."
+description: C#/.NET conventions---which library or API to reach for when several compete for the same job, the exact semantics of ToList, new List, and collection-expression spread, how to write a LINQ query expression that ends in a method call, which collection interface to use for method parameters and return types, and why to avoid primary constructors. Use this whenever writing, reviewing, or suggesting C#/.NET code, whenever choosing a NuGet package or BCL API for a task (HTTP resilience, YAML, MVVM, testing, ORM, versioning, DB drivers, etc.), whenever materializing an enumerable sequence into a list, whenever a LINQ query expression (`from`...`select`) needs a trailing call like `Count()` or `ToList()`, and whenever declaring a method's parameter or return type that is a collection (arrays, `List<T>`, `IEnumerable<T>`, dictionaries, etc.), and whenever writing a type with constructor parameters or when an IDE/analyzer suggests converting to a primary constructor---even if the user doesn't explicitly ask for "style" or "conventions."
 ---
 
 # C# style
@@ -88,6 +88,36 @@ var count = (from b in db.Blogs
              where b.Name.Contains(".NET")
              select b).Count();
 ```
+
+## Avoid primary constructors
+
+Don't use primary constructors on classes or structs. Parameter scope is too muddled: the parameters are captured implicitly, may be mutable, and read like fields without being declared as fields.
+
+Declare fields (or properties) explicitly and assign them in a regular constructor.
+
+Prefer:
+
+```cs
+public class BlogService
+{
+    private readonly BlogContext _db;
+
+    public BlogService(BlogContext db)
+    {
+        _db = db;
+    }
+}
+```
+
+Over:
+
+```cs
+public class BlogService(BlogContext db)
+{
+}
+```
+
+Records may use their positional (primary) syntax, since it declares public properties rather than captured parameters.
 
 ## Collection materialization semantics
 
