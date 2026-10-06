@@ -5,7 +5,7 @@ description: How to write a C# LINQ query expression (`from`...`select`) that en
 
 # C# LINQ query syntax
 
-A query expression has no syntax of its own for calls like `Count` or `ToList`---don't bolt one on by parenthesizing the whole expression. Instead, pass the query expression as an argument to the equivalent `Enumerable`/`Queryable` static method.
+A query expression has no syntax of its own for calls like `Count` or `ToList`---don't append one by parenthesizing the whole expression. Instead, pass the query expression as an argument to the equivalent `Enumerable`/`Queryable` static method.
 
 Prefer:
 

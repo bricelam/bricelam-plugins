@@ -1,6 +1,6 @@
 ---
 name: csharp-lsp
-description: When to reach for the LSP tool (Roslyn language server) while working in C# code---finding a symbol's definition, references, implementations, or callers, and checking a symbol's type or signature. Use whenever answering a question about how C# code is connected (who calls this, what implements this, where is this defined, what type is this) or before changing a C# member's signature---even if Grep would get partway there.
+description: When to use the LSP tool (Roslyn language server) while working in C# code---finding a symbol's definition, references, implementations, or callers, and checking a symbol's type or signature. Use whenever answering a question about how C# code is connected (who calls this, what implements this, where is this defined, what type is this) or before changing a C# member's signature---even if Grep seems sufficient.
 ---
 
 # C# LSP

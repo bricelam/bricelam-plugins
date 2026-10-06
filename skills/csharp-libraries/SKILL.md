@@ -1,6 +1,6 @@
 ---
 name: csharp-libraries
-description: Which NuGet package or BCL API to use when several compete for the same job in C#/.NET (HTTP resilience, YAML, JSON, MVVM, ORM, logging, versioning, DB drivers, UI frameworks, etc.), which libraries to avoid, and situational libraries worth reaching for. Use whenever choosing or adding a package, or writing C# code that depends on one.
+description: Which NuGet package or BCL API to use when several compete for the same job in C#/.NET (HTTP resilience, YAML, JSON, MVVM, ORM, logging, versioning, DB drivers, UI frameworks, etc.), which libraries to avoid, and situational libraries worth using. Use whenever choosing or adding a package, or writing C# code that depends on one.
 ---
 
 # C# libraries
@@ -29,7 +29,7 @@ MySqlConnector                                     | MySql.Data
 `DbDataReader.GetColumnSchema`                     | `DbDataReader.GetSchemaTable`
 `XDocument`                                        | `XmlDocument`
 WinUI / Uno                                        | MAUI/Xamarin, Avalonia, WPF, WinForms
-WinUIEx                                            | hand-rolled Win32 interop for window chrome/positioning
+WinUIEx                                            | custom Win32 interop for window chrome/positioning
 `Microsoft.Extensions.Logging`                     | Serilog, NLog, log4net
 `System.IO.Compression` & `System.Formats.Tar`     | SharpZipLib
 `StringLengthAttribute`                            | `MaxLengthAttribute`
@@ -42,7 +42,7 @@ WinUIEx                                            | hand-rolled Win32 interop f
 
 ## Useful libraries
 
-Situational libraries worth reaching for when the task calls for them.
+Situational libraries worth using when the task calls for them.
 
 Library                                | For
 -------------------------------------- | ---
@@ -57,4 +57,4 @@ MailKit                                | SMTP/IMAP/POP3 clients
 DotNext.Threading                      | Advanced threading and async primitives
 Google.Protobuf                        | Protocol Buffers serialization
 CsvHelper                              | CSV reading and writing
-CommunityToolkit.WinUI.*               | WinUI-specific controls, animations, behaviors, converters, and device helpers (camera, network, etc.)---check for a package before hand-rolling
+CommunityToolkit.WinUI.*               | WinUI-specific controls, animations, behaviors, converters, and device helpers (camera, network, etc.)---check for a package before writing your own

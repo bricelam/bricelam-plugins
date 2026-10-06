@@ -13,11 +13,11 @@ Expression                             | Meaning
 -------------------------------------- | -------
 `x.ToList()`                           | Buffer/materialize a lazy `IEnumerable`; also the normal way to convert another collection type (array, `HashSet<T>`, etc.) into a `List<T>`.
 `new List<T>(x)`                       | Explicitly copy/snapshot an existing collection into a new, independent `List<T>`---signals "I need my own copy of this" rather than "I need to run the query."
-`[..x]` (collection-expression spread) | Syntax abuse. Never use this to materialize or copy a list---use one of the two above instead.
+`[..x]` (collection-expression spread) | Don't use this to materialize or copy a list---use one of the two above instead.
 
 ## Parameter and return types
 
-Favor the least-committal interface that still expresses what the implementation actually needs---this lets the caller choose between streaming and buffering instead of the signature forcing a choice.
+Favor the most general interface that still expresses what the implementation actually needs---this lets the caller choose between streaming and buffering instead of the signature forcing a choice.
 
 Return types: favor `IEnumerable<T>`/`IAsyncEnumerable<T>` over `T[]`, `List<T>`, `Task<List<T>>`, etc., unless the implementation requires results to already be buffered.
 

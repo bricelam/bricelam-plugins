@@ -5,7 +5,7 @@ description: Conventions for writing Win32 native interop code in C# using CsWin
 
 # C# native interop style
 
-- Add `using static Windows.Win32.PInvoke;` at the top of the file, and call generated methods and reference generated const fields directly (naked/unqualified)---don't prefix with a class name and don't wrap them in a helper method or class.
+- Add `using static Windows.Win32.PInvoke;` at the top of the file, and call generated methods and reference generated const fields directly (unqualified)---don't prefix with a class name and don't wrap them in a helper method or class.
 - Use the const fields CsWin32 generates as-is; don't redeclare your own copies or wrap them in an enum/class.
 - Cast explicitly between `IntPtr`/`nint` and CsWin32's handle structs (`HWND`, `HANDLE`, etc.) at the boundary where a handle enters or leaves interop code, rather than avoiding the handle struct types or threading raw `IntPtr` through the rest of the code.
 

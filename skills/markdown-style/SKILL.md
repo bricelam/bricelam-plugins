@@ -7,13 +7,13 @@ description: Conventions for writing Markdown---table formatting, smartypants sh
 
 ## Tables
 
-Use the plain/simple table form---no leading or trailing pipes. Pad each column to the width of its longest cell so the source stays readable unrendered, and make the header separator row match that width.
+Use pipe tables without leading or trailing pipes. Pad each column to the width of its longest cell so the source stays readable unrendered, and make the header separator row match that width.
 
 Example:
 
 Prefer         | Over
 -------------- | ----
-Plain tables   | Pipe-fenced tables (`| a | b |`)
+No outer pipes | Outer pipes (`| a | b |`)
 Padded columns | Cramped, unaligned columns
 
 ## Smartypants notation

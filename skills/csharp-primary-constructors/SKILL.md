@@ -5,7 +5,7 @@ description: Don't use C# primary constructors on classes or structs. Use whenev
 
 # C# primary constructors
 
-Don't use primary constructors on classes or structs. Parameter scope is too muddled: the parameters are captured implicitly, may be mutable, and read like fields without being declared as fields.
+Don't use primary constructors on classes or structs. Parameter scope is unclear: the parameters are captured implicitly, may be mutable, and read like fields without being declared as fields.
 
 Declare fields (or properties) explicitly and assign them in a regular constructor.
 
