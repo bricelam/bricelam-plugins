@@ -1,9 +1,15 @@
 ---
 name: dotnet-testing
-description: Conventions for structuring and writing .NET tests---unit vs. functional test projects, naming, namespaces, directories, and Testcontainers. Use whenever creating, organizing, or writing test projects, test classes, or test methods in a .NET repo.
+description: Conventions for .NET tests---test framework and library choices (xunit.v3, Testcontainers; no Moq or FluentAssertions), unit vs. functional/integration test project layout, naming, namespaces, and `InternalsVisibleTo`. Use whenever creating, organizing, or writing test projects, test classes, or test methods in a .NET repo.
 ---
 
 # .NET testing
+
+## Libraries
+
+- Use xunit.v3 over NUnit or MSTest.
+- Use Testcontainers for isolated, real dependencies in functional tests.
+- Avoid Moq and FluentAssertions.
 
 ## Unit tests
 
@@ -17,11 +23,11 @@ description: Conventions for structuring and writing .NET tests---unit vs. funct
 
 ## Functional tests
 
-- Use Testcontainers for isolated, real dependencies.
+- Project name: `<src-project>.FunctionalTests`
 - Don't access non-public APIs.
 - Use classes and directories to group tests by area.
 - Use the same class (or a base class) to share common infrastructure (e.g. setup/arrange code).
-- Class names should end in Tests.
+- Class names end in Tests.
 
 ## General
 

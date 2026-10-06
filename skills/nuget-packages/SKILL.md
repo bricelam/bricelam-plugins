@@ -1,6 +1,6 @@
 ---
 name: nuget-packages
-description: Convention for locating an installed NuGet package's files on disk. Use whenever inspecting a restored package's contents (e.g. reading its source, `.dll`, or `.targets` files) or otherwise needing the global packages folder path---even if the user doesn't explicitly ask about "NuGet" or "conventions."
+description: Convention for locating an installed NuGet package's files on disk. Use whenever inspecting a restored package's contents (e.g. reading its source, `.dll`, or `.targets` files) or otherwise needing the global packages folder path.
 ---
 
 # NuGet package location

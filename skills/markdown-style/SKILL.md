@@ -1,11 +1,9 @@
 ---
 name: markdown-style
-description: Conventions for writing Markdown---plain/simple table formatting (no outer pipes, columns aligned with padding) and smartypants shorthand for dashes, quotes, and ellipses, and sparing use of backtick code spans. Use whenever writing or editing Markdown prose, tables, or documentation (SKILL.md files, READMEs, issues, PR descriptions, commit-adjacent docs)---even if the user doesn't explicitly ask for "formatting" or "style."
+description: Conventions for writing Markdown---table formatting, smartypants shorthand for dashes, quotes, and ellipses, and sparing use of code spans. Use whenever writing or editing Markdown (SKILL.md files, READMEs, issues, PR descriptions, docs).
 ---
 
 # Markdown style
-
-Conventions for Markdown content. Apply these by default; only deviate if the user says otherwise or the file already has an established, different convention.
 
 ## Tables
 

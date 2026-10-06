@@ -1,11 +1,9 @@
 ---
 name: csharp-xml-docs
-description: Conventions for writing C# XML documentation comments (`///`)---when to write them at all, which tags to use for code references and emphasis, and the standard wording for summaries, parameters, return values, properties, constructors, finalizers, and exceptions. Use whenever writing, reviewing, or editing `///` comments or tags like `<summary>`, `<param>`, `<returns>`, `<value>`, and `<exception>`, or whenever documenting a C# API---even if the user doesn't explicitly ask for "doc comments."
+description: Conventions for writing C# XML documentation comments (`///`)---when to write them, which tags to use, and standard wording for `<summary>`, `<param>`, `<returns>`, `<value>`, and `<exception>`. Use whenever writing, reviewing, or editing `///` comments or documenting a C# API.
 ---
 
 # C# XML doc comments
-
-Conventions for XML documentation comments. Apply these by default; only deviate if the user says otherwise or the project already has an established, different convention.
 
 ## When to write them
 
@@ -35,7 +33,6 @@ Avoid `<br/>`.
 - Keep `<summary>` brief.
 - Start `<param>`, `<typeparam>`, `<value>`, and `<returns>` with a noun.
 - End with a period.
-- Use consistent words and phrases.
 
 Target                            | Pattern
 --------------------------------- | -------
